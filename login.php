@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 
 <head>
 
@@ -22,11 +22,14 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
               <?php
-              include 'config/conn.php';
+              include 'conn.php';
               $sql=mysql_query("select * from sekolah where id='2'");
               $rs=mysql_fetch_array($sql);
                ?>
-              <marquee><h2>Selamat Datang di Website Absensi <?php echo $rs['nama']; ?>, Silahkan Admin/Guru/Siswa Login dibawah ini.</h2></marquee>
+              <div class="alert alert-info text-center" role="alert">
+                  <p class="lead">Selamat Datang di Website Absensi <?php echo $rs['nama']; ?></p>
+                  <p>Silahkan Admin/Guru/Siswa Login dibawah ini.</p>
+              </div>
                 <div class="login-panel panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Login</h3>
@@ -35,13 +38,15 @@
                         <form role="form" method="post" action="ceklog.php">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Username" name="username" required autofocus>
+                                    <label for="username">Username</label>
+                                    <input class="form-control" id="username" placeholder="Username" name="username" required autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" required value="">
+                                    <label for="password">Password</label>
+                                    <input class="form-control" id="password" placeholder="Password" name="password" type="password" required value="">
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button class="btn btn-lg btn-success btn-block">Login</a>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
                             </fieldset>
                         </form>
                     </div>

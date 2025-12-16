@@ -1,7 +1,7 @@
 <?php
 // FILE KONEKSI
 
-include"config/conn.php";
+include"conn.php";
 
 $pass=md5($_POST['password']);
 $passw=$_POST['password'];
