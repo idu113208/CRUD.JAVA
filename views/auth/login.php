@@ -4,7 +4,9 @@
 <div class="row justify-content-center">
     <div class="col-md-6">
         <div class="card mt-5">
-            <div class="card-header bg-primary text-white">Login Alumni / Admin</div>
+            <div class="card-header bg-primary text-white">
+                <h3 class="h5 mb-0">Login Alumni / Admin</h3>
+            </div>
             <div class="card-body">
                 <?php if(isset($_SESSION['error'])): ?>
                     <div class="alert alert-danger"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></div>
@@ -15,14 +17,17 @@
 
                 <form action="../../controllers/AuthController.php" method="POST">
                     <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" autocomplete="email" required>
                     </div>
                     <div class="mb-3">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" autocomplete="current-password" required>
                     </div>
-                    <button type="submit" name="login" class="btn btn-primary w-100">Login</button>
+                    <button type="submit" name="login" class="btn btn-primary w-100 mb-3">Login</button>
+                    <div class="text-center">
+                        <small>Belum punya akun? <a href="register.php">Daftar disini</a></small>
+                    </div>
                 </form>
             </div>
         </div>
