@@ -15,14 +15,17 @@
 
                 <form action="../../controllers/AuthController.php" method="POST">
                     <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" autocomplete="email" required>
                     </div>
                     <div class="mb-3">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" autocomplete="current-password" required>
                     </div>
-                    <button type="submit" name="login" class="btn btn-primary w-100">Login</button>
+                    <button type="submit" name="login" class="btn btn-primary w-100 mb-3">Login</button>
+                    <div class="text-center">
+                        <a href="register.php" class="text-decoration-none">Don't have an account? Register</a>
+                    </div>
                 </form>
             </div>
         </div>
