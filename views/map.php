@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Peta Persebaran Alumni</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -16,9 +17,11 @@
             <div class="card-body">
                 <form class="row g-3" id="filterForm">
                     <div class="col-auto">
+                        <label for="angkatan" class="visually-hidden">Angkatan</label>
                         <input type="text" class="form-control" id="angkatan" placeholder="Angkatan (contoh: 2018)">
                     </div>
                     <div class="col-auto">
+                        <label for="prodi" class="visually-hidden">Program Studi</label>
                         <input type="text" class="form-control" id="prodi" placeholder="Program Studi">
                     </div>
                     <div class="col-auto">
@@ -28,7 +31,7 @@
             </div>
         </div>
 
-        <div id="map"></div>
+        <div id="map" aria-label="Peta Persebaran Alumni" role="application"></div>
         <a href="../index.php" class="btn btn-secondary mt-3">Kembali</a>
     </div>
 
