@@ -1785,8 +1785,28 @@ class HTML2PDF_parsingCss
                     $content = preg_replace('/url\(([^\\\\][^)]*)\)/isU', 'url('.$urlSelf.'$1)', $content);
                     $content = preg_replace('/url\((\\\\[^)]*)\)/isU', 'url('.$urlMain.'$1)', $content);
                 } else {
-// @TODO correction on url in absolute on a local css content
-                    // $content = preg_replace('/url\(([^)]*)\)/isU', 'url('.dirname($url).'/$1)', $content);
+                    // correction on url in absolute on a local css content
+                    $dir = str_replace('\\', '/', dirname($url));
+                    $content = preg_replace_callback('/url\(([^)]*)\)/isU', function($match) use ($dir) {
+                        $val = trim($match[1]);
+                        $quote = '';
+                        if (preg_match('/^[\'"]/', $val)) {
+                            $quote = $val[0];
+                            if (substr($val, -1) == $quote) {
+                                $val = substr($val, 1, -1);
+                            }
+                        }
+
+                        if (preg_match('/^(http:\/\/|https:\/\/|ftp:\/\/|data:|\/)/i', $val)) {
+                            return $match[0];
+                        }
+
+                        $sep = (substr($dir, -1) != '/') ? '/' : '';
+                        $newUrl = $dir . $sep . $val;
+                        if ($dir == '.') $newUrl = $val;
+
+                        return 'url('.$quote.$newUrl.$quote.')';
+                    }, $content);
                 }
 
                 // add to the CSS content
