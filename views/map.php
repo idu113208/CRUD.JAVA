@@ -15,14 +15,22 @@
         <div class="card mb-3">
             <div class="card-body">
                 <form class="row g-3" id="filterForm">
-                    <div class="col-auto">
-                        <input type="text" class="form-control" id="angkatan" placeholder="Angkatan (contoh: 2018)">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="angkatan" placeholder="Angkatan (contoh: 2018)">
+                            <label for="angkatan">Angkatan (contoh: 2018)</label>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                        <input type="text" class="form-control" id="prodi" placeholder="Program Studi">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="prodi" placeholder="Program Studi">
+                            <label for="prodi">Program Studi</label>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                        <button type="button" class="btn btn-primary mb-3" onclick="initMap()">Filter</button>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <button type="button" class="btn btn-primary w-100 py-3" onclick="initMap()">
+                            Filter Peta
+                        </button>
                     </div>
                 </form>
             </div>
