@@ -14,15 +14,18 @@
                 <?php endif; ?>
 
                 <form action="../../controllers/AuthController.php" method="POST">
-                    <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="name@example.com" autocomplete="email" required>
+                        <label for="floatingEmail">Email Address</label>
                     </div>
-                    <div class="mb-3">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="current-password" required>
+                        <label for="floatingPassword">Password</label>
                     </div>
                     <button type="submit" name="login" class="btn btn-primary w-100">Login</button>
+                    <div class="text-center mt-3">
+                        <a href="register.php" class="text-decoration-none">Belum punya akun? Daftar disini</a>
+                    </div>
                 </form>
             </div>
         </div>

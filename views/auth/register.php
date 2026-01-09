@@ -11,19 +11,22 @@
                 <?php endif; ?>
 
                 <form action="../../controllers/AuthController.php" method="POST">
-                    <div class="mb-3">
-                        <label>Nama Lengkap</label>
-                        <input type="text" name="nama" class="form-control" required>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="nama" class="form-control" id="floatingNama" placeholder="Nama Lengkap" autocomplete="name" required>
+                        <label for="floatingNama">Nama Lengkap</label>
                     </div>
-                    <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="name@example.com" autocomplete="email" required>
+                        <label for="floatingEmail">Email Address</label>
                     </div>
-                    <div class="mb-3">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="new-password" required>
+                        <label for="floatingPassword">Password</label>
                     </div>
                     <button type="submit" name="register" class="btn btn-success w-100">Daftar</button>
+                    <div class="text-center mt-3">
+                        <a href="login.php" class="text-decoration-none">Sudah punya akun? Login</a>
+                    </div>
                 </form>
             </div>
         </div>
