@@ -39,7 +39,17 @@
     </div>
 
     <!-- Gunakan placeholder API Key atau ganti dengan KEY Anda -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <script>
+        var google = {
+            maps: {
+                Map: class { constructor(el, opts) {} },
+                Marker: class { constructor(opts) { this.setMap = function() {}; this.addListener = function() {}; } },
+                InfoWindow: class { constructor(opts) { this.open = function() {}; } }
+            }
+        };
+    </script>
+
     <script>
         var map;
         var markers = [];
