@@ -11,17 +11,17 @@
                 <?php endif; ?>
 
                 <form action="../../controllers/AuthController.php" method="POST">
-                    <div class="mb-3">
-                        <label>Nama Lengkap</label>
-                        <input type="text" name="nama" class="form-control" required>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap" autocomplete="name" required>
+                        <label for="nama">Nama Lengkap</label>
                     </div>
-                    <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" autocomplete="email" required>
+                        <label for="email">Email</label>
                     </div>
-                    <div class="mb-3">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" required>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" autocomplete="new-password" required>
+                        <label for="password">Password</label>
                     </div>
                     <button type="submit" name="register" class="btn btn-success w-100">Daftar</button>
                 </form>
